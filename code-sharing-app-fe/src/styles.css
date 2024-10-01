@@ -1,0 +1,90 @@
+:root {
+  --white: #fffffe;
+  --black: #121826;
+  --dark-blue: #364153;
+  --gray: #ced6e1;
+  --blue: #406aff;
+}
+
+*,
+::after,
+::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Outfit", sans-serif;
+}
+
+body {
+  display: grid;
+  background-color: var(--white);
+  min-height: 100vh;
+  padding-inline: 1.25rem;
+  padding-block-start: 2.25rem;
+  padding-block-end: 3rem;
+  background-image: linear-gradient(
+    to bottom right,
+    rgba(183, 135, 245, 1),
+    rgba(116, 62, 228, 1)
+  );
+}
+
+body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1000;
+  display: inline-block;
+  width: 100%;
+  min-height: 80vh;
+  background-image: url("./assets/images/Hero-Background-notecode.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top center;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.gap-6 {
+  gap: 1.5rem;
+}
+
+.text-align-center {
+  text-align: center;
+}
+
+ngx-monaco-editor {
+  height: 70vh !important; /* Monaco editor takes the full height of the container */
+  max-width: 100%; /* Monaco editor takes the full width of the container */
+  display: block; /* Ensure it behaves like a block element */
+}
+
+.monaco-editor,
+.monaco-editor .inputarea.ime-input {
+  padding: 1rem 0rem;
+}
+
+.monaco-editor-container {
+  border-radius: 0.75rem;
+  overflow: hidden;
+}
+
+.monaco-editor .margin-view-overlays .codicon-folding-collapsed,
+.monaco-editor .margin-view-overlays .codicon-folding-expanded {
+  opacity: 1;
+
+  left: 50px !important;
+}
+
+.codicon-folding-expanded:before,
+.codicon-folding-collapsed:before {
+  content: "" !important;
+  background-image: url("./assets/images/down%20arrow.svg");
+  background-repeat: no-repeat;
+  width: 2rem;
+  height: 1rem;
+}
